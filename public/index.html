@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampüs Etkinlik Panosu | Yozgat Bozok Üniversitesi</title>
+  <meta name="description" content="Yozgat Bozok Üniversitesi öğrenci toplulukları, atölyeler ve söyleşi etkinlikleri panosu.">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+
+  <!-- Üst Bilgi ve Menü -->
+  <header class="ust-bant">
+    <div class="logo-alani">
+      <div class="logo-ikon" aria-hidden="true">🎓</div>
+      <div class="logo-metin">
+        <span class="logo-ana">Bozok Etkinlik</span>
+        <span class="logo-alt">Kampüs Panosu</span>
+      </div>
+    </div>
+    <nav class="ana-menu" aria-label="Ana Gezinti">
+      <ul>
+        <li><a href="#etkinlikler-alani" class="menu-link aktif">Etkinlikler</a></li>
+        <li><a href="#oneri-alani" class="menu-link">Etkinlik Öner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Ana İçerik -->
+  <main class="ana-icerik">
+
+    <!-- Etkinlikler Bölümü -->
+    <section id="etkinlikler-alani" class="etkinlik-bolumu" aria-labelledby="ana-baslik">
+      <div class="bolum-ust-bilgi">
+        <h1 id="ana-baslik" class="bolum-baslik">Kampüs Etkinlikleri</h1>
+        <p class="bolum-aciklama">Fakülteler ve öğrenci toplulukları tarafından düzenlenen güncel atölye, söyleşi ve buluşmalar.</p>
+      </div>
+
+      <!-- Filtre ve Arama Çubuğu -->
+      <div class="filtre-arama-kutusu">
+        <div class="arama-alani">
+          <label for="arama-girdisi" class="arama-etiket">Etkinlik Ara:</label>
+          <input 
+            type="search" 
+            id="arama-girdisi" 
+            class="arama-girdisi" 
+            placeholder="Başlığa göre ara (ör. Web, Git, Siber)..." 
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="tur-filtreleri" role="group" aria-label="Etkinlik Türü Filtreleri">
+          <button type="button" class="filtre-butonu secili" data-tur="tumu">Tümü</button>
+          <button type="button" class="filtre-butonu" data-tur="atolye">Atölye</button>
+          <button type="button" class="filtre-butonu" data-tur="soylesi">Söyleşi</button>
+          <button type="button" class="filtre-butonu" data-tur="topluluk">Topluluk</button>
+        </div>
+      </div>
+
+      <!-- Durum Bildirimleri (Yükleniyor, Hata, Boş Mesaj) -->
+      <div id="durum-kapsayici" class="durum-kapsayici" aria-live="polite"></div>
+
+      <!-- Etkinlik Kartları Listesi -->
+      <div id="etkinlik-listesi" class="kart-galerisi">
+        <!-- Kartlar betik.js tarafından createElement ve append ile eklenecektir -->
+      </div>
+    </section>
+
+    <!-- Etkinlik Öneri Formu Bölümü -->
+    <section id="oneri-alani" class="oneri-bolumu" aria-labelledby="oneri-baslik">
+      <div class="oneri-kapsayici">
+        <h2 id="oneri-baslik" class="oneri-baslik">Yeni Bir Etkinlik Öner</h2>
+        <p class="oneri-aciklama">Kampüste düzenlemek istediğiniz atölye, söyleşi veya topluluk etkinliğini paylaşın.</p>
+
+        <form id="etkinlik-oneri-formu" class="oneri-formu" novalidate>
+          <div class="form-alani">
+            <label for="form-etkinlik-adi" class="form-etiket">Etkinlik Adı <span class="zorunlu">*</span></label>
+            <input 
+              type="text" 
+              id="form-etkinlik-adi" 
+              name="etkinlikAdi" 
+              class="form-girdisi" 
+              placeholder="En az 5 karakterlik etkinlik başlığı"
+              required
+            >
+          </div>
+
+          <div class="form-alani">
+            <label for="form-etkinlik-tarihi" class="form-etiket">Etkinlik Tarihi <span class="zorunlu">*</span></label>
+            <input 
+              type="date" 
+              id="form-etkinlik-tarihi" 
+              name="etkinlikTarihi" 
+              class="form-girdisi" 
+              required
+            >
+          </div>
+
+          <div class="form-alani">
+            <label for="form-eposta" class="form-etiket">İletişim E-posta Adresi <span class="zorunlu">*</span></label>
+            <input 
+              type="email" 
+              id="form-eposta" 
+              name="eposta" 
+              class="form-girdisi" 
+              placeholder="ornek@bozok.edu.tr" 
+              required
+            >
+          </div>
+
+          <!-- Form Durum Bildirimleri (Hata ve Teşekkür İletisi) -->
+          <div id="form-bildirim" class="form-bildirim" aria-live="polite"></div>
+
+          <button type="submit" id="form-gonder-butonu" class="form-buton">Etkinlik Önerisini Gönder</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Alt Bilgi (Footer) -->
+  <footer class="alt-bilgi">
+    <div class="alt-icerik">
+      <p class="telif">&copy; 2026 Yozgat Bozok Üniversitesi - Bilgisayar Mühendisliği Bölümü</p>
+      <p class="gelistirici">BMH231 Web Programlama Dersi Ödev 2 | Hazırlayan: Nisa Pelin Temel</p>
+    </div>
+  </footer>
+
+  <script src="betik.js"></script>
+</body>
+</html>
