@@ -1,0 +1,18 @@
+{
+  "name": "bmh231-odev2",
+  "version": "1.0.0",
+  "description": "BMH231 Web Programlama Dersi Ödev 2 - Kampüs Etkinlik Panosu",
+  "main": "sunucu.js",
+  "scripts": {
+    "start": "node sunucu.js"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "node.js",
+    "api"
+  ],
+  "author": "Nisa Pelin Temel",
+  "license": "ISC"
+}
