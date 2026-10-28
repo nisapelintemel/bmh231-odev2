@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "baslik": "Modern Web Geliştirme ve REST API Atölyesi",
+    "tur": "atolye",
+    "tarih": "2026-11-12",
+    "yer": "Mühendislik Fakültesi D-104 Laboratuvarı",
+    "kontenjan": 35
+  },
+  {
+    "id": 2,
+    "baslik": "Siber Güvenlikte Kariyer ve CTF Stratejileri",
+    "tur": "soylesi",
+    "tarih": "2026-11-18",
+    "yer": "Erdoğan Akdağ Kongre ve Kültür Merkezi Salon A",
+    "kontenjan": 150
+  },
+  {
+    "id": 3,
+    "baslik": "Bozok Bilişim Topluluğu Güz Dönemi Tanışma Toplantısı",
+    "tur": "topluluk",
+    "tarih": "2026-11-08",
+    "yer": "İktisadi ve İdari Bilimler Fakültesi Konferans Salonu",
+    "kontenjan": 90
+  },
+  {
+    "id": 4,
+    "baslik": "Git ve GitHub ile Takım Çalışması Eğitimi",
+    "tur": "atolye",
+    "tarih": "2026-11-25",
+    "yer": "Mühendislik Fakültesi D-102 Laboratuvarı",
+    "kontenjan": 40
+  },
+  {
+    "id": 5,
+    "baslik": "Yapay Zekâ ve Veri Bilimi Trendleri Paneli",
+    "tur": "soylesi",
+    "tarih": "2026-12-02",
+    "yer": "Merkezi Kütüphane Konferans Salonu",
+    "kontenjan": 120
+  },
+  {
+    "id": 6,
+    "baslik": "Açık Kaynak Yazılım ve Linux Kurulum Günleri",
+    "tur": "topluluk",
+    "tarih": "2026-12-10",
+    "yer": "Bilgisayar Mühendisliği Binası Zemin Kat Amfi",
+    "kontenjan": 75
+  }
+]
