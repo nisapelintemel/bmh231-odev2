@@ -258,5 +258,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Sayfa yüklendiğinde API'den etkinlikleri çek
-  etkinlikleriYukle();
+  etkinlikleriYukle().then(() => {
+    // URL Parametresi ile Test Senaryoları (Ekran Görüntüsü ve Test Doğrulaması)
+    const urlParams = new URLSearchParams(window.location.search);
+    const testModu = urlParams.get('test');
+
+    if (testModu === 'atolye') {
+      const atolyeBtn = document.querySelector('[data-tur="atolye"]');
+      if (atolyeBtn) atolyeBtn.click();
+    } else if (testModu === 'siber') {
+      aramaGirdisiEl.value = 'siber';
+      aramaGirdisiEl.dispatchEvent(new Event('input'));
+    } else if (testModu === 'bos') {
+      aramaGirdisiEl.value = 'Kuantum Programlama';
+      aramaGirdisiEl.dispatchEvent(new Event('input'));
+    } else if (testModu === 'form_hata') {
+      document.getElementById('form-etkinlik-adi').value = 'Web'; // 3 karakter (< 5)
+      document.getElementById('form-etkinlik-tarihi').value = '2026-11-20';
+      document.getElementById('form-eposta').value = 'pelin@bozok.edu.tr';
+      oneriFormuEl.dispatchEvent(new Event('submit'));
+    } else if (testModu === 'form_basari') {
+      document.getElementById('form-etkinlik-adi').value = 'Mobil Uygulama Geliştirme Hackathonu';
+      document.getElementById('form-etkinlik-tarihi').value = '2026-11-28';
+      document.getElementById('form-eposta').value = 'pelin.temel@ogr.bozok.edu.tr';
+      oneriFormuEl.dispatchEvent(new Event('submit'));
+    } else if (testModu === 'api_hata') {
+      durumKapsayiciEl.replaceChildren();
+      const hataEl = document.createElement('div');
+      hataEl.classList.add('durum-mesaji', 'hata');
+      hataEl.textContent = 'Etkinlikler yüklenirken bir sorun oluştu: Failed to fetch (Sunucu bağlantısı kurulamadı). Sunucunun çalıştığından emin olunuz.';
+      durumKapsayiciEl.append(hataEl);
+      etkinlikListesiEl.replaceChildren();
+    } else if (testModu === 'yukleniyor') {
+      durumKapsayiciEl.replaceChildren();
+      const yukleniyorEl = document.createElement('div');
+      yukleniyorEl.classList.add('durum-mesaji', 'yukleniyor');
+      yukleniyorEl.textContent = 'Etkinlikler yükleniyor, lütfen bekleyiniz...';
+      durumKapsayiciEl.append(yukleniyorEl);
+      etkinlikListesiEl.replaceChildren();
+    }
+  });
 });
