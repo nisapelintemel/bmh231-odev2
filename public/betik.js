@@ -277,11 +277,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('form-etkinlik-tarihi').value = '2026-11-20';
       document.getElementById('form-eposta').value = 'pelin@bozok.edu.tr';
       oneriFormuEl.dispatchEvent(new Event('submit'));
+      document.getElementById('oneri-alani').scrollIntoView();
     } else if (testModu === 'form_basari') {
       document.getElementById('form-etkinlik-adi').value = 'Mobil Uygulama Geliştirme Hackathonu';
       document.getElementById('form-etkinlik-tarihi').value = '2026-11-28';
       document.getElementById('form-eposta').value = 'pelin.temel@ogr.bozok.edu.tr';
       oneriFormuEl.dispatchEvent(new Event('submit'));
+      document.getElementById('oneri-alani').scrollIntoView();
     } else if (testModu === 'api_hata') {
       durumKapsayiciEl.replaceChildren();
       const hataEl = document.createElement('div');
