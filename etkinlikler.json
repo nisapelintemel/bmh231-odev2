@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "baslik": "Modern Web Gelistirme ve Node.js Atolyesi",
+    "tur": "atolye",
+    "tarih": "2026-11-12",
+    "yer": "Muhendislik Fakultesi Bilgisayar Lab 2",
+    "kontenjan": 35
+  },
+  {
+    "id": 2,
+    "baslik": "Yapay Zeka ve Gelecegin Teknolojileri Soylesisi",
+    "tur": "soylesi",
+    "tarih": "2026-11-15",
+    "yer": "Erdogan Akdag Kongre Merkezi Salon A",
+    "kontenjan": 150
+  },
+  {
+    "id": 3,
+    "baslik": "Bozok Bilisim Toplulugu Guz Donemi Tanisma Toplantisi",
+    "tur": "topluluk",
+    "tarih": "2026-11-18",
+    "yer": "IIBF Konferans Salonu",
+    "kontenjan": 120
+  },
+  {
+    "id": 4,
+    "baslik": "Git & GitHub ile Versiyon Kontrolu Egitimi",
+    "tur": "atolye",
+    "tarih": "2026-11-21",
+    "yer": "Merkezi Kutuphane Seminer Odasi",
+    "kontenjan": 40
+  },
+  {
+    "id": 5,
+    "baslik": "Siber Guvenlikte Kariyer ve CTF Deneyimleri",
+    "tur": "soylesi",
+    "tarih": "2026-11-25",
+    "yer": "Muhendislik Fakultesi Mavi Amfi",
+    "kontenjan": 80
+  },
+  {
+    "id": 6,
+    "baslik": "Acik Kaynak Kod Toplulugu Proje Gelistirme Bulusmasi",
+    "tur": "topluluk",
+    "tarih": "2026-11-28",
+    "yer": "Ogrenci Yasam Merkezi Calisma Alani",
+    "kontenjan": 60
+  }
+]

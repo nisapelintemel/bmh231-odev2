@@ -1,0 +1,17 @@
+{
+  "name": "bmh231-odev2",
+  "version": "1.0.0",
+  "description": "Kampus Etkinlik Panosu - BMH231 Web Programlama Odev 2",
+  "main": "sunucu.js",
+  "scripts": {
+    "start": "node sunucu.js"
+  },
+  "keywords": [
+    "nodejs",
+    "http",
+    "vanillajs",
+    "bmh231"
+  ],
+  "author": "",
+  "license": "ISC"
+}
