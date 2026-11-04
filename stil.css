@@ -1,0 +1,450 @@
+/* ==========================================================================
+   BMH231 Ödev 2 - Kampüs Etkinlik Panosu Stilleri
+   ========================================================================== */
+
+/* B2: :root içinde CSS değişkenleri tanımı */
+:root {
+  --ana-renk: #003366;          /* Bozok laciverti / kurumsal mavi */
+  --vurgu-renk: #e65100;        /* Turuncu vurgu rengi */
+  --arka-plan: #f4f6f9;         /* Sayfa arka plan rengi */
+  --kart-arka-plan: #ffffff;    /* Kart ve form zemin rengi */
+  --metin-ana: #1e293b;         /* Koyu okunabilir metin rengi */
+  --metin-ikincil: #64748b;     /* Açıklama ve etiket metinleri */
+  --kenarlik: #e2e8f0;          /* İnce kenarlık rengi */
+  --basari-renk: #15803d;       /* Form başarı iletisi yeşili */
+  --hata-renk: #b91c1c;         /* Form hata uyarısı kırmızısı */
+  --golge-hafif: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --golge-orta: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --kavis: 10px;                /* Köşe yuvarlama standardı */
+}
+
+/* B2: Tüm öğeler için box-sizing: border-box kuralı */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--arka-plan);
+  color: var(--metin-ana);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   B2: Üst Bant (Header) - Flexbox Yerleşimi
+   ========================================================================== */
+.ust-bant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--ana-renk);
+  color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: var(--golge-hafif);
+}
+
+.logo-alani {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo-ikon {
+  font-size: 1.6rem;
+}
+
+.menu-listesi {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.menu-baglanti {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--kavis);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-baglanti:hover,
+.menu-baglanti:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Ana İçerik Bölümü
+   ========================================================================== */
+.ana-icerik {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.bolum-ust {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.ana-baslik {
+  font-size: 2rem;
+  color: var(--ana-renk);
+  margin-bottom: 0.5rem;
+}
+
+.bolum-aciklama {
+  color: var(--metin-ikincil);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Filtreleme ve Arama Paneli - Flexbox Yerleşimi
+   ========================================================================== */
+.filtre-arama-paneli {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  background-color: var(--kart-arka-plan);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--kavis);
+  box-shadow: var(--golge-hafif);
+  margin-bottom: 2rem;
+}
+
+/* B2: Tür filtresi düğmeleri için Flexbox */
+.filtre-grubu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filtre-btn {
+  background-color: #f1f5f9;
+  color: var(--metin-ana);
+  border: 1px solid var(--kenarlik);
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtre-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.filtre-btn.secili {
+  background-color: var(--ana-renk);
+  color: #ffffff;
+  border-color: var(--ana-renk);
+  box-shadow: 0 2px 4px rgba(0, 51, 102, 0.25);
+}
+
+.arama-grubu {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.arama-etiket {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--metin-ana);
+}
+
+.arama-kutusu {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--kenarlik);
+  border-radius: var(--kavis);
+  font-size: 0.95rem;
+  width: 240px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arama-kutusu:focus {
+  border-color: var(--ana-renk);
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15);
+}
+
+/* Durum Mesajı (Yükleniyor, Hata, Sonuç Yok) */
+.durum-mesaji {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 2.5rem 1rem;
+  color: var(--metin-ikincil);
+}
+
+.durum-mesaji.hata {
+  color: var(--hata-renk);
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--kavis);
+}
+
+/* ==========================================================================
+   B2: Etkinlik Kartları - CSS Grid (repeat(auto-fit, minmax(...)))
+   ========================================================================== */
+.kart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.etkinlik-karti {
+  background-color: var(--kart-arka-plan);
+  border: 1px solid var(--kenarlik);
+  border-radius: var(--kavis);
+  padding: 1.5rem;
+  box-shadow: var(--golge-hafif);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.etkinlik-karti:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--golge-orta);
+}
+
+.kart-ust {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.kart-baslik {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ana-renk);
+  line-height: 1.4;
+}
+
+.tur-etiketi {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.tur-atolye {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.tur-soylesi {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.tur-topluluk {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.kart-bilgileri {
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--metin-ikincil);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--kenarlik);
+}
+
+.bilgi-satiri {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   Etkinlik Öner Formu
+   ========================================================================== */
+.oneri-bolumu {
+  margin-top: 2rem;
+}
+
+.form-kutusu {
+  background-color: var(--kart-arka-plan);
+  border: 1px solid var(--kenarlik);
+  border-radius: var(--kavis);
+  padding: 2rem;
+  max-width: 650px;
+  margin: 0 auto;
+  box-shadow: var(--golge-hafif);
+}
+
+.form-baslik {
+  color: var(--ana-renk);
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-aciklama {
+  color: var(--metin-ikincil);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.etkinlik-formu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-alani {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-alani label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--metin-ana);
+}
+
+.form-alani input {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--kenarlik);
+  border-radius: var(--kavis);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-alani input:focus {
+  border-color: var(--ana-renk);
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15);
+}
+
+.gonder-btn {
+  background-color: var(--vurgu-renk);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--kavis);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 0.5rem;
+}
+
+.gonder-btn:hover {
+  background-color: #d84315;
+}
+
+.gonder-btn:active {
+  transform: scale(0.99);
+}
+
+.form-bildirim {
+  padding: 0.85rem 1rem;
+  border-radius: var(--kavis);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: none;
+}
+
+.form-bildirim.hata-mesaji {
+  display: block;
+  background-color: #fef2f2;
+  color: var(--hata-renk);
+  border: 1px solid #fecaca;
+}
+
+.form-bildirim.basari-mesaji {
+  display: block;
+  background-color: #f0fdf4;
+  color: var(--basari-renk);
+  border: 1px solid #bbf7d0;
+}
+
+/* ==========================================================================
+   Alt Bilgi (Footer)
+   ========================================================================== */
+.alt-bilgi {
+  background-color: var(--ana-renk);
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.alt-kucuk {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   B3: Duyarlı Tasarım (Responsive Media Query)
+   Kırılma Noktası: 768px (Tablet ve Mobil Cihazlar İçin)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .ust-bant {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .filtre-arama-paneli {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtre-grubu {
+    justify-content: center;
+  }
+
+  .arama-grubu {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .arama-kutusu {
+    width: 100%;
+  }
+
+  .ana-icerik {
+    padding: 1.25rem 1rem;
+  }
+
+  .kart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-kutusu {
+    padding: 1.5rem 1rem;
+  }
+}
