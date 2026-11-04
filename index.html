@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yozgat Bozok Üniversitesi Kampüs Etkinlik Panosu ve Etkinlik Öneri Platformu">
+  <title>Kampüs Etkinlik Panosu - Bozok Üniversitesi</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <!-- Üst Bant (Header): Logo ve Navigasyon Menüsü -->
+  <header class="ust-bant">
+    <div class="logo-alani">
+      <span class="logo-ikon" aria-hidden="true">🎓</span>
+      <span class="logo-metin">Bozok Kampüs</span>
+    </div>
+    <nav class="ana-menu" aria-label="Ana Menü">
+      <ul class="menu-listesi">
+        <li><a href="#etkinlikler-alani" class="menu-baglanti">Etkinlikler</a></li>
+        <li><a href="#etkinlik-oneri-alani" class="menu-baglanti">Etkinlik Öner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Ana İçerik Alanı -->
+  <main class="ana-icerik">
+    <!-- Etkinlik Listesi Bölümü -->
+    <section id="etkinlikler-alani" class="etkinlikler-bolumu" aria-labelledby="ana-baslik">
+      <div class="bolum-ust">
+        <h1 id="ana-baslik" class="ana-baslik">Yaklaşan Kampüs Etkinlikleri</h1>
+        <p class="bolum-aciklama">Üniversitemiz kulüp, atölye ve akademik söyleşilerini buradan takip edebilirsiniz.</p>
+      </div>
+
+      <!-- Filtreleme ve Arama Kontrolleri -->
+      <div class="filtre-arama-paneli">
+        <div class="filtre-grubu" role="group" aria-label="Etkinlik Türü Filtresi">
+          <button type="button" class="filtre-btn secili" data-tur="tumu">Tümü</button>
+          <button type="button" class="filtre-btn" data-tur="atolye">Atölye</button>
+          <button type="button" class="filtre-btn" data-tur="soylesi">Söyleşi</button>
+          <button type="button" class="filtre-btn" data-tur="topluluk">Topluluk</button>
+        </div>
+
+        <div class="arama-grubu">
+          <label for="arama-girdisi" class="arama-etiket">Etkinlik Ara:</label>
+          <input 
+            type="search" 
+            id="arama-girdisi" 
+            class="arama-kutusu" 
+            placeholder="Başlığa göre ara..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <!-- Durum İletisi (Yükleniyor, Hata veya Sonuç Yok) -->
+      <div id="durum-mesaji" class="durum-mesaji" aria-live="polite"></div>
+
+      <!-- Etkinlik Kartları Grid Konteyneri -->
+      <div id="kart-listesi" class="kart-grid"></div>
+    </section>
+
+    <!-- Etkinlik Öner Formu Bölümü -->
+    <section id="etkinlik-oneri-alani" class="oneri-bolumu" aria-labelledby="oneri-baslik">
+      <div class="form-kutusu">
+        <h2 id="oneri-baslik" class="form-baslik">Yeni Bir Etkinlik Öner</h2>
+        <p class="form-aciklama">Kampüste düzenlemek istediğiniz bir etkinliği bizimle paylaşın.</p>
+
+        <form id="etkinlik-formu" class="etkinlik-formu" novalidate>
+          <div class="form-alani">
+            <label for="etkinlik-adi">Etkinlik Adı</label>
+            <input 
+              type="text" 
+              id="etkinlik-adi" 
+              name="etkinlikAdi" 
+              placeholder="Örn: Yapay Zekâ Hackathonu" 
+              required
+            >
+          </div>
+
+          <div class="form-alani">
+            <label for="etkinlik-tarihi">Etkinlik Tarihi</label>
+            <input 
+              type="date" 
+              id="etkinlik-tarihi" 
+              name="etkinlikTarihi" 
+              required
+            >
+          </div>
+
+          <div class="form-alani">
+            <label for="iletisim-eposta">İletişim E-posta Adresi</label>
+            <input 
+              type="email" 
+              id="iletisim-eposta" 
+              name="iletisimEposta" 
+              placeholder="ornek@bozok.edu.tr" 
+              required
+            >
+          </div>
+
+          <button type="submit" id="oneri-gonder-btn" class="gonder-btn">Öneriyi Gönder</button>
+          
+          <!-- Hata ve Başarı Geri Bildirim Alanı -->
+          <div id="form-bildirim" class="form-bildirim" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Alt Bilgi (Footer) -->
+  <footer class="alt-bilgi">
+    <div class="alt-icerik">
+      <p>© 2026 Yozgat Bozok Üniversitesi - Bilgisayar Mühendisliği Bölümü</p>
+      <p class="alt-kucuk">BMH231 Web Programlama Dersi Ödev 2 • Kampüs Etkinlik Panosu</p>
+    </div>
+  </footer>
+
+  <script src="betik.js" defer></script>
+</body>
+</html>
