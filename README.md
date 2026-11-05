@@ -1,4 +1,4 @@
-# Kampüs Etkinlik Panosu (BMH231 Ödev 2)
+.# Kampüs Etkinlik Panosu (BMH231 Ödev 2)
 
 Bu proje, **Yozgat Bozok Üniversitesi Bilgisayar Mühendisliği Bölümü BMH231 Web Programlama** dersi 2. ödevi kapsamında geliştirilmiştir. Projede kampüsteki atölye, söyleşi ve öğrenci topluluk etkinliklerini listeleyen semantik, duyarlı ve etkileşimli bir web panosu sunulmaktadır.
 
